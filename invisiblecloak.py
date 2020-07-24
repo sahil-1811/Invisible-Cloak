@@ -31,14 +31,14 @@ while(cap.isOpened()):
 	#convert the colour space from BGR to hsv
 	hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 
-	##generate masks to detect red color
-	lower_red=np.array([20,100,50])
-	upper_red=np.array([30,255,255])
-	mask1=cv2.inRange(hsv,lower_red,upper_red)
+	##generate masks to detect yellow color
+	lower_yellow=np.array([20,100,50])
+	upper_yellow=np.array([30,255,255])
+	mask1=cv2.inRange(hsv,lower_yellow,upper_yellow)
 
-	lower_red=np.array([170,100,80])
-	upper_red=np.array([180,255,255])
-	mask2=cv2.inRange(hsv,lower_red,upper_red)
+	lower_yellow=np.array([170,100,80])
+	upper_yellow=np.array([180,255,255])
+	mask2=cv2.inRange(hsv,lower_yellow,upper_yellow)
 	mask1=mask1+mask2
 
 	##open and dilate the mask image
